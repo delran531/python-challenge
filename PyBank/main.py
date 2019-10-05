@@ -35,9 +35,11 @@
 # Dependencies
 import os
 import csv
+from pathlib import Path
 
 # path = 'C:\\Users\\delan\\OneDrive\\Documents\\GitHub\\python-challenge\\PyBank\\Resources'
-datapath = os.path.join("Resources",'budget_data.csv')
+# datapath = os.path.join("Resources",'budget_data.csv')
+filepath = Path("Resources/budget_data.csv")
 
 # Initialize variables
 ttl_mnths = 0
@@ -52,7 +54,7 @@ gd_mnth = ''
 cur_mnth = ''
 
 # Loop thru file
-with open(datapath, 'r',newline='') as datafile:
+with open(filepath, 'r',newline='') as datafile:
     readfile = csv.reader(datafile, delimiter=',')
     # skip header
     next(readfile)
